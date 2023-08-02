@@ -1,0 +1,12 @@
+@import "utility.css";
+
+
+/* General Styling */
+
+
+body{
+    font-size: var(--fs-body);
+    font-family: var(--fd-body);
+    color: var(--clr-primary-400);
+}
+
