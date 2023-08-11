@@ -1,6 +1,3 @@
-@import "utility.css";
-
-
 /* General Styling */
 
 
@@ -13,6 +10,7 @@ body{
 /* button */
 
 .button {
+    display: inline-flex;
     cursor: pointer;
     text-decoration: none;
     border: 0;
@@ -41,5 +39,102 @@ body{
     background-color: var(--clr-neutral-100);
     color: var(--clr-accent-300);
 }
+
+/* Navigation */
+
+.primary-header {
+    padding-top: var(--size-700);
+}
+
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.nav-list {
+    font-size: var(--fs-nav);
+}
+
+.opened {
+    display: block;
+    position: fixed;
+}
+
+.nav-list{
+    display: flex;
+    gap: clamp(var(--size-400), 4vw, var(--size-700));
+    font-weight: var(--fw-semi-bold);
+}
+
+.nav-list a {
+    color: var(--clr-primary-400);
+    text-decoration: none;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+    color: var(--clr-accent-400);
+    text-decoration: none;
+}
+
+@media (max-width: 50em){
+    .primary-navigation {
+        display: none;
+        position: fixed;
+        padding: var(--size-700);
+        inset: 7rem var(--size-400) auto;
+        max-width: 20rem;
+        margin-inline-start: auto;
+        background: var(--clr-neutral-100);
+        border-radius: var(--size-100);
+        box-shadow: 0 0 0.5em rgb(0, 0, 0, 0.05);
+    }
+
+    .primary-header[data-overlay]::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+    }
+
+    body:has(.primary-header[data-overlay]){
+        height: 100vh;
+    }
+
+    .nav-list {
+        display: grid;
+        gap: var(--size-600);
+        text-align: center;
+        font-weight: var(--fw-bold);
+    }
+
+    
+
+    .primary-navigation[data-visible] {
+        display: block;
+    }
+    .mobile-nav-toggle {
+        display: block;
+        position: fixed;
+        /* top: var(--size-600); */
+        right: var(--size-400);
+        z-index: 100;
+
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        padding: 0.5em;
+    }
+    
+    .mobile-nav-toggle .icon-close {
+        display: none;
+    }
+}
+
+
 
 
