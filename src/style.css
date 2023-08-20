@@ -3,9 +3,19 @@
 
 body{
     font-size: var(--fs-body);
-    font-family: var(--fd-body);
+    font-family: var(--ff-body);
     color: var(--clr-primary-400);
 }
+
+p:not([class]) {
+    opacity: 0.7;
+    max-width: 32ch;
+}
+
+p[data-width="wide"]{
+    max-width: 45ch;
+}
+
 
 /* button */
 
@@ -111,8 +121,6 @@ body{
         text-align: center;
         font-weight: var(--fw-bold);
     }
-
-    
 
     .primary-navigation[data-visible] {
         display: block;

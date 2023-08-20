@@ -142,6 +142,10 @@ svg {
   margin-inline: auto;
 }
 
+:where(.flow :not(:first-child)) {
+  margin-top: var(--flow-spacer, 3em);
+}
+
 .even-columns {
   display: grid;
   gap: 1em;
