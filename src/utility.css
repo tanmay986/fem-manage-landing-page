@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
-@import "./style.css";
+@import "./style.scss";
 
 :root{
   --clr-accent-500:  hsl(12, 60%, 45%);
@@ -142,6 +142,7 @@ svg {
   margin-inline: auto;
 }
 
+
 :where(.flow :not(:first-child)) {
   margin-top: var(--flow-spacer, 3em);
 }
@@ -155,6 +156,20 @@ svg {
   .even-columns{
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+  }
+}
+
+.justify-self-end{
+  justify-self: end;
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+@media (min-width: 50em) {
+  .justify-self-end-md{
+    justify-self: end;
   }
 }
 
@@ -218,7 +233,7 @@ svg {
 }
 
 .fs-secondary-heading {
-  font-size: var(--fs-400);
+  font-size: var(--fs-secondary-heading);
   line-height: 1.1;
 }
 

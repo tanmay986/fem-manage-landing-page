@@ -1,7 +1,7 @@
 /* General Styling */
 
 
-body{
+body {
     font-size: var(--fs-body);
     font-family: var(--ff-body);
     color: var(--clr-primary-400);
@@ -12,7 +12,7 @@ p:not([class]) {
     max-width: 32ch;
 }
 
-p[data-width="wide"]{
+p[data-width="wide"] {
     max-width: 45ch;
 }
 
@@ -56,13 +56,13 @@ p[data-width="wide"]{
     padding-top: var(--size-700);
 }
 
-.nav-wrapper{
+.nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.mobile-nav-toggle{
+.mobile-nav-toggle {
     display: none;
 }
 
@@ -75,23 +75,30 @@ p[data-width="wide"]{
     position: fixed;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     gap: clamp(var(--size-400), 4vw, var(--size-700));
     font-weight: var(--fw-semi-bold);
+
+    & a {
+        color: var(--clr-primary-400);
+        text-decoration: none;
+
+        &:focus, &:hover {
+            color: var(--clr-accent-400);
+            text-decoration: none;
+        }
+    }
 }
 
-.nav-list a {
-    color: var(--clr-primary-400);
-    text-decoration: none;
-}
-.nav-list a:hover,
-.nav-list a:focus {
-    color: var(--clr-accent-400);
-    text-decoration: none;
-}
+// .nav-list a {
+// }
 
-@media (max-width: 50em){
+// .nav-list a:hover,
+// .nav-list a:focus {
+// }
+
+@media (max-width: 50em) {
     .primary-navigation {
         display: none;
         position: fixed;
@@ -104,14 +111,14 @@ p[data-width="wide"]{
         box-shadow: 0 0 0.5em rgb(0, 0, 0, 0.05);
     }
 
-    .primary-header[data-overlay]::before{
+    .primary-header[data-overlay]::before {
         content: "";
         position: fixed;
         inset: 0;
         background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
     }
 
-    body:has(.primary-header[data-overlay]){
+    body:has(.primary-header[data-overlay]) {
         height: 100vh;
     }
 
@@ -125,6 +132,7 @@ p[data-width="wide"]{
     .primary-navigation[data-visible] {
         display: block;
     }
+
     .mobile-nav-toggle {
         display: block;
         position: fixed;
@@ -137,12 +145,38 @@ p[data-width="wide"]{
         border: 0;
         padding: 0.5em;
     }
-    
+
     .mobile-nav-toggle .icon-close {
         display: none;
     }
 }
 
+/* cta */
+
+.cta {
+    position: relative;
+    isolation: isolate;
+    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background-image:
+            url("../images/bg-tablet-pattern.svg"),
+            url("../images//bg-tablet-pattern.svg");
+        background-repeat: no-repeat;
+        background-position: -15rem -5rem, 80rem -42rem;
+        opacity: 0.1;
+    }
+
+    @media screen and (min-width: 50em) {
+        text-align: left;
+    }
+}
 
 
+
+// Footer 
 
